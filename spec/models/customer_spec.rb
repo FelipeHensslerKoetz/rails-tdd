@@ -3,10 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe Customer, type: :model do
-  fixtures :customers
-
   it 'Creates a Customer' do
-    customer = customers(:felipe)
+    customer = create(:customer)
 
     expect(customer.full_name).to eq('Sr. Felipe')
   end
