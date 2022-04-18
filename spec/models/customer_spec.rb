@@ -14,12 +14,17 @@ RSpec.describe Customer, type: :model do
     expect(customer.full_name).to eq('Sr. Felipe')
     expect(customer.email).to eq('felipe@gmail.com')
     expect(customer.vip).to be_falsey
-    expect(customer.days_to_pay).to eq(0)
+    expect(customer.days_to_pay).to eq(15)
   end
 
   it '#full_name (with factory aliases)' do
     client = create(:client)
     expect(client.full_name).to start_with('Sr. ')
+  end
+
+  it 'attributes_for' do
+    attrs = attributes_for(:customer)
+    puts attrs
   end
 
   it { expect { create(:customer) }.to change { Customer.all.size }.by(1) }
