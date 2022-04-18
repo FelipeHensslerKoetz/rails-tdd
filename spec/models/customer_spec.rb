@@ -27,5 +27,10 @@ RSpec.describe Customer, type: :model do
     puts attrs
   end
 
+  it 'transient attribute' do
+    customer = create(:customer, :customer_default, upcased: true)
+    expect(customer.name.upcase).to eq(customer.name)
+  end
+
   it { expect { create(:customer) }.to change { Customer.all.size }.by(1) }
 end
