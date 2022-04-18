@@ -9,10 +9,12 @@ RSpec.describe Customer, type: :model do
   end
 
   it '#full name (override random values)' do
-    customer = create(:customer, name: 'Felipe', email: 'felipe@gmail.com')
+    customer = create(:customer, :customer_default, name: 'Felipe', email: 'felipe@gmail.com')
     expect(customer.name).to eq('Felipe')
     expect(customer.full_name).to eq('Sr. Felipe')
     expect(customer.email).to eq('felipe@gmail.com')
+    expect(customer.vip).to be_falsey
+    expect(customer.days_to_pay).to eq(0)
   end
 
   it '#full_name (with factory aliases)' do
