@@ -9,7 +9,7 @@ RSpec.describe Customer, type: :model do
   end
 
   it '#full name (override random values)' do
-    customer = create(:customer, :customer_default, name: 'Felipe', email: 'felipe@gmail.com')
+    customer = create(:customer_male_default, name: 'Felipe', email: 'felipe@gmail.com')
     expect(customer.name).to eq('Felipe')
     expect(customer.full_name).to eq('Sr. Felipe')
     expect(customer.email).to eq('felipe@gmail.com')
@@ -28,8 +28,14 @@ RSpec.describe Customer, type: :model do
   end
 
   it 'transient attribute' do
-    customer = create(:customer, :customer_default, upcased: true)
+    customer = create(:customer_male_default, upcased: true)
     expect(customer.name.upcase).to eq(customer.name)
+  end
+
+  it 'nested factories' do 
+    attrs = attributes_for(:customer_male_default)
+    expect(attrs[:gender]).to eq('M')
+    puts attrs
   end
 
   it { expect { create(:customer) }.to change { Customer.all.size }.by(1) }
