@@ -17,6 +17,11 @@ RSpec.describe Order, type: :model do
     expect(orders.size).to eq(3)
   end
 
+  it 'creates a pair' do 
+    orders = create_pair(:order)
+    expect(orders.size).to eq(2)
+  end
+
   it 'has many orders' do 
     customer = create(:customer, :with_orders)
     expect(customer.orders.size).to eq(3)
