@@ -11,4 +11,9 @@ RSpec.describe Order, type: :model do
     order = create(:order, customer: customer)
     puts order.customer
   end
+
+  it 'has three orders' do 
+    orders = create_list(:order, 3)
+    expect(orders.size).to eq(3)
+  end
 end
