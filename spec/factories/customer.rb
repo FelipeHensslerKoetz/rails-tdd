@@ -3,7 +3,8 @@
 FactoryBot.define do
   factory :customer, aliases: [:client] do
     name { Faker::Name.name }
-    email { Faker::Internet.email }
+    # email { Faker::Internet.email }
+    sequence(:email) { |n| "my_email-#{n}@mail.com" }
 
     transient do
       upcased { false }
