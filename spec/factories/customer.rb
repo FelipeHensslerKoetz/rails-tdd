@@ -3,6 +3,8 @@
 FactoryBot.define do
   factory :customer, aliases: [:client] do
     name { Faker::Name.name }
+    address { Faker::Address.street_name }
+
     # email { Faker::Internet.email }
     sequence(:email) { |n| "my_email-#{n}@mail.com" }
 
