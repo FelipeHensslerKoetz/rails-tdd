@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://jsonplaceholder.typicode.com/posts/2
+    uri: API-URL/posts/2
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 20 Apr 2022 00:17:44 GMT
+      - Wed, 20 Apr 2022 00:52:34 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,7 +33,7 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '999'
       X-Ratelimit-Reset:
-      - '1650412534'
+      - '1650412294'
       Vary:
       - Origin, Accept-Encoding
       Access-Control-Allow-Credentials:
@@ -53,17 +53,17 @@ http_interactions:
       Cf-Cache-Status:
       - HIT
       Age:
-      - '1389'
+      - '3708'
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=MDIOntTd6xDdKjzjmp2NoQcjxl9i0kwTkbK5M6S%2FgHohX9ve6hY6SFZ3n7WUTVGST0mNJqkngCDmHX2KUF9qLrvUt7oG11Q0h0knMn2PtChrESpk5pl56XUfacyoPnkB4MbJUCeJjMCqnfHj9fA63YZgl7Zoq%2B0UDVqJ"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=87zKhus33WYkfpzyUpYCcAR97fZUHzO5ulHDdlBsaS%2F4iih2RW3FIKt%2FRafQXT8%2B3ePNiTF9c8W0tNBht%2FvlRMeyH%2BW4haNU17l5eGzVr5xruX%2B5DSqtiectMhpwdMs62Q1QvAy47IGDpIsHlywWz0jQh34Js0Wbl8qc"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 6fe9b2da4bb018c0-EWR
+      - 6fe9e5e3bf883354-EWR
       Alt-Svc:
       - h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
@@ -75,5 +75,5 @@ http_interactions:
           "title": "qui est esse",
           "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
         }
-  recorded_at: Wed, 20 Apr 2022 00:17:44 GMT
+  recorded_at: Wed, 20 Apr 2022 00:52:34 GMT
 recorded_with: VCR 6.1.0
