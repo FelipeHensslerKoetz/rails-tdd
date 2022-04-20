@@ -58,6 +58,7 @@ group :development, :test do
   gem 'faker'
   gem 'httparty'
   gem 'rspec-rails', '~> 5.1.1'
+  gem 'webmock'
 end
 
 group :development do
