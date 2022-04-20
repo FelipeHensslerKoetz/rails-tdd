@@ -2,6 +2,7 @@
 
 # Webmock gem
 require 'webmock/rspec'
+require 'vcr'
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
@@ -26,9 +27,9 @@ end
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  config.before(:suite) do
-    FactoryBot.lint
-  end
+  #config.before(:suite) do
+  #  FactoryBot.lint
+  #end
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
