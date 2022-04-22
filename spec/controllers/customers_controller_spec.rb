@@ -24,6 +24,14 @@ RSpec.describe CustomersController, type: :controller do
       expect(response).to have_http_status(201)
     end
 
+    # Shoulda Matchers
+    it { is_expected.to route(:get,'/customers').to(action: :index) }
+
+    it '#create with invalid parameters' do
+      customer_params = attributes_for(:customer, address: nil)
+      post :create, params: { customer: customer_params, format: :json }
+      expect(response).to have_http_status(422)
+    end
     it 'Flash Notice' do
       customer_params = attributes_for(:customer)
       post :create, params: { customer: customer_params, format: :html }
