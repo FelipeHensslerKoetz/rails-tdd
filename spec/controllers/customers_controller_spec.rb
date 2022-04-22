@@ -12,17 +12,24 @@ RSpec.describe CustomersController, type: :controller do
   end
 
   describe 'as a logged member' do
-    before do 
+    before do
       @member = create(:member)
       @customer = create(:customer)
       sign_in @member
-    end 
-      
-    it '#create' do 
+    end
+
+    it '#create' do
       customer_params = attributes_for(:customer)
       post :create, params: { customer: customer_params, format: :json }
       expect(response).to have_http_status(201)
-    end 
+    end
+
+    it 'Flash Notice' do
+      customer_params = attributes_for(:customer)
+      post :create, params: { customer: customer_params, format: :html }
+
+      expect(flash[:notice]).to eq('Customer was successfully created.')
+    end
 
     it '#show' do
       get :show, params: { id: @customer.id }
