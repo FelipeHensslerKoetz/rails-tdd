@@ -5,8 +5,8 @@ FactoryBot.define do
     name { Faker::Name.name }
     address { Faker::Address.street_name }
 
-    # email { Faker::Internet.email }
-    sequence(:email) { |n| "my_email-#{n}@mail.com" }
+    email { Faker::Internet.email }
+    #sequence(:email) { |n| "my_email-#{n}@mail.com" }
 
     transient do
       upcased { false }

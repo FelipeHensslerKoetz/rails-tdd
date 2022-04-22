@@ -12,18 +12,26 @@ RSpec.describe CustomersController, type: :controller do
   end
 
   describe 'as a logged member' do
+    before do 
+      @member = create(:member)
+      @customer = create(:customer)
+      sign_in @member
+    end 
+      
+    it '#create' do 
+      customer_params = attributes_for(:customer)
+      post :create, params: { customer: customer_params, format: :json }
+      expect(response).to have_http_status(201)
+    end 
+
     it '#show' do
-      member = create(:member)
-      sign_in member
-      get :index
+      get :show, params: { id: @customer.id }
       expect(response).to have_http_status(200)
     end
 
-    it 'renders :index template' do
-      member = create(:member)
-      sign_in member
-      get :index
-      expect(response).to render_template(:index)
+    it 'renders :show template' do
+      get :show, params: { id: @customer.id }
+      expect(response).to render_template(:show)
     end
   end
 end
