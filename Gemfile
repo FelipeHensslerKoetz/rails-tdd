@@ -63,8 +63,10 @@ group :development, :test do
   gem 'pry'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 5.1.1'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'vcr'
+  gem 'webdrivers'
   gem 'webmock'
 end
 
