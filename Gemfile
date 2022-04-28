@@ -62,6 +62,7 @@ group :development, :test do
   gem 'httparty'
   gem 'pry'
   gem 'rails-controller-testing'
+  gem 'rubocop'
   gem 'rspec-rails', '~> 5.1.1'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
