@@ -31,6 +31,18 @@ RSpec.describe 'Customers', type: :request do
                                             email: (be_kind_of String))
     end
 
+    it '/customers/:id' do
+      create(:customer, id: 1, name: 'Felipe', email: 'felipe@gmail.com')
+
+      get customer_path(1), params: { format: :json }
+
+      response_body = JSON.parse(response.body)
+
+      expect(response_body['id']).to be_kind_of Integer
+      expect(response_body['name']).to be_kind_of String
+      expect(response_body['email']).to be_kind_of String
+    end
+
     it 'create - JSON' do
       headers = { 'accept' => 'application/json' }
 
@@ -56,6 +68,19 @@ RSpec.describe 'Customers', type: :request do
       expect(response.body).to include_json(id: (be_kind_of Integer),
                                             name: (be_kind_of String),
                                             email: 'new_email@gmail.com')
+    end
+
+    it 'delete - JSON' do
+      create(:customer)
+
+      customer_params = Customer.first
+
+      headers = { 'accept' => 'application/json' }
+
+      delete "/customers/#{customer_params.id}.json", headers: headers
+
+      expect(response).to have_http_status(204)
+      expect(Customer.count).to be_zero
     end
   end
 end
