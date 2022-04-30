@@ -64,6 +64,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rubocop'
   gem 'rspec-rails', '~> 5.1.1'
+  gem 'rspec-json_expectations'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'vcr'

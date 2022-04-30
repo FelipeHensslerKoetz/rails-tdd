@@ -75,4 +75,5 @@ RSpec.configure do |config|
 
   # Devise for specs
   config.include Devise::Test::ControllerHelpers, type: :controller
+  # config.include Devise::Test::ControllerHelpers, type: :request
 end
