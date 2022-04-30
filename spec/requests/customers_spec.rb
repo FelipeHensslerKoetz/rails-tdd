@@ -9,6 +9,14 @@ RSpec.describe 'Customers', type: :request do
       expect(response).to have_http_status(200)
     end
 
+    it 'JSON Schema' do 
+      create(:customer, id: 1, name: 'Felipe', email: 'felipe@gmail.com')
+
+      get customer_path(1), params: { format: :json } 
+
+      expect(response).to match_response_schema('customer')
+    end
+
     it '/customers.json' do
       create(:customer, id: 1, name: 'Felipe', email: 'felipe@gmail.com')
 

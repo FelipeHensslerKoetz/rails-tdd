@@ -6,6 +6,7 @@ require 'vcr'
 require 'webdrivers'
 require 'capybara'
 require 'rspec/json_expectations'
+require 'json_matchers/rspec'
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
